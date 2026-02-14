@@ -1,0 +1,100 @@
+<section class="container align-middle">
+  @if (showForm) {
+  <h2 class="text-center fw-bold mt-5">Сделать заказ</h2>
+  <div class="row my-5 justify-content-center">
+    <div class="col-xl-6">
+      <form action="#" class="row g-3 form wow animate__fadeInUpBig" id="form" [formGroup]="orderForm">
+        <div class="col-12">
+          <label for="productName" class="form-label">Наименование товара</label>
+          <input type="text" class="form-control" formControlName="product" id="productName" readonly>
+          @if(product?.invalid){
+          <div class="text-danger small">*Выбор товара обязателен</div>
+          }
+        </div>
+        <div class="col-lg-4">
+          <label for="inputFirstName" class="form-label">Имя</label>
+          <input type="text" class="form-control" formControlName="name" id="inputFirstName">
+          @if (name?.invalid&&(name?.touched||name?.dirty)) {
+          @if (name?.errors?.['required']) {
+          <div class="text-danger small">*Имя обязательно для заполнения</div>
+          }
+          @if(name?.errors?.['pattern']) {
+          <div class="text-danger small">*Имя должно содержать только буквы</div>
+          }
+          }
+        </div>
+        <div class="col-lg-4">
+          <label for="inputLastName" class="form-label">Фамилия</label>
+          <input type="text" class="form-control" formControlName="last_name" id="inputLastName">
+          @if (last_name?.invalid&&(last_name?.touched||last_name?.dirty)) {
+          @if (last_name?.errors?.['required']) {
+          <div class="text-danger small">*Фамилия обязательна для заполнения</div>
+          }
+          @if(last_name?.errors?.['pattern']) {
+          <div class="text-danger small">*Фамилия должно содержать только буквы</div>
+          }
+          }
+        </div>
+        <div class="col-lg-4">
+          <label for="inputPhone" class="form-label">Телефон</label>
+          <input type="phone" class="form-control" formControlName="phone" id="inputPhone">
+          @if (phone?.invalid&&(phone?.touched||phone?.dirty)) {
+          @if (phone?.errors?.['required']) {
+          <div class="text-danger small">*Телефон обязателен для заполнения</div>
+          }
+          @if(phone?.errors?.['pattern']) {
+          <div class="text-danger small">*Телефон может содержать только 11 цифр</div>
+          }
+          }
+        </div>
+        <div class="col-lg-6">
+          <label for="inputCountry" class="form-label">Страна</label>
+          <input type="text" class="form-control" formControlName="country" id="inputCountry">
+          @if (country?.invalid&&(country?.touched||country?.dirty)) {
+          <div class="text-danger small">*Страна обязательна для заполнения</div>
+          }
+        </div>
+        <div class="col-lg-6">
+          <label for="inputZip" class="form-label">Индекс</label>
+          <input type="text" class="form-control" formControlName="zip" id="inputZip">
+          @if (zip?.invalid&&(zip?.touched||zip?.dirty)) {
+          @if (zip?.errors?.['required']) {
+          <div class="text-danger small">*Индекс обязателен для заполнения</div>
+          }
+          @if(zip?.errors?.['pattern']) {
+          <div class="text-danger small">*Индекс может содержать только 6 цифр</div>
+          }
+          }
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Адрес</label>
+          <input type="text" class="form-control" formControlName="address" id="inputAddress">
+          @if (address?.invalid&&(address?.touched||address?.dirty)) {
+          @if (address?.errors?.['required']) {
+          <div class="text-danger small">*Адрес обязателен для заполнения</div>
+          }
+          @if(address?.errors?.['pattern']) {
+          <div class="text-danger small">*Адрес может содержать только буквы, цифры, пробелы, тире и слеши</div>
+          }
+          }
+        </div>
+        <div class="col-12">
+          <label for="comment" class="form-label">Комментарий к заказу</label>
+          <textarea type="text" class="form-control" formControlName="comment" id="comment" rows="3"></textarea>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary btn-form hvr-radial-out" #submitBtn (click)="sendOrder()">Отправить</button>
+          @if (showErrorSending) {
+          <span class="ms-2 text-danger small">*Произошла ошибка. Попробуйте еще раз.</span>
+          }
+        </div>
+      </form>
+    </div>
+  </div>
+  }
+  @if(!showForm){
+  <div class="border border-primary border-5 rounded-4 m-5 p-5 orderComplete">
+    <h2 class="text-center fw-bold my-5">Спасибо за заказ. Мы свяжемся с вами в ближайшее время!</h2>
+  </div>
+  }
+</section>

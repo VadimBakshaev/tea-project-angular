@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'bootstrap/scss/bootstrap';
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+app-main,
+app-assortment,
+app-order {
+    flex-grow: 1;
+}
+
+
+.slider {
+    position: relative;
+}
+
+.slick-prev {
+    position: absolute;
+    left: 10px;
+    top: calc(50% - 20px);
+    z-index: 5;
+}
+
+.slick-next {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 20px);
+    z-index: 5;
+}
+
+.slick-prev:hover .filled,
+.slick-next:hover .filled {
+    fill: #076BFF;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+
+}
+
+.accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-collapse.collapsing {
+    transition: 0.1s ease;
+}

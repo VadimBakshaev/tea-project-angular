@@ -1,0 +1,13 @@
+<section class="container d-flex flex-column align-center mx-auto text-center">
+    <div class="m-2 m-lg-5">
+        <h2>{{product?.title}}</h2>
+        <div class="row justify-content-center">
+        <img class="col-sm-12 col-lg-6" src="{{product?.image}}" alt="product {{product?.id}} image">
+        </div>
+        <p>{{product?.description}}</p>
+        <div class="d-flex gap-4 align-items-center justify-content-end">
+            <span>Цена: {{product?.price}} руб.</span>
+            <button [routerLink]="'/order'" class="btn btn-primary">Купить</button>
+        </div>
+    </div>
+</section>

@@ -22,15 +22,29 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "scss",            
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
-            "styles": [
+            "styles": [              
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/magnific-popup/dist/magnific-popup.css",
               "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js",
+              "node_modules/magnific-popup/dist/jquery.magnific-popup.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "jquery"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           },
           "configurations": {

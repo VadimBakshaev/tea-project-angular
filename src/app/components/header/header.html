@@ -1,0 +1,26 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="''">Logo</a>
+      <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" (click)="isMenuCollapsed = !isMenuCollapsed" [routerLink]="''">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="isMenuCollapsed = !isMenuCollapsed" [routerLink]="'/catalog'">Каталог</a>
+          </li>          
+        </ul>
+        <form class="d-flex" role="search" (submit)="$event.preventDefault()">
+          <input class="form-control me-2" type="search" placeholder="Поиск чая" #searchEl
+            (change)="changeSearch($event ,searchEl.value)" (keyup.enter)="changeSearch($event,searchEl.value)">          
+          <button class="btn btn-outline-info" type="button"
+            (click)="changeSearch($event,searchEl.value)">Найти</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
