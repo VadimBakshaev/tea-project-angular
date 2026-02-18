@@ -10,7 +10,12 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "standalone": false
+        },
+        "@schematics/angular:module": {
+          "routing": true,
+          "commonModule": true
         }
       },
       "root": "",
@@ -20,9 +25,12 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": {
+              "base": "dist/tea-project"
+            },
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",            
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
               {
@@ -30,7 +38,7 @@
                 "input": "public"
               }
             ],
-            "styles": [              
+            "styles": [
               "node_modules/slick-carousel/slick/slick.scss",
               "node_modules/magnific-popup/dist/magnific-popup.css",
               "src/styles.scss"
