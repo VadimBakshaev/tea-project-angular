@@ -20,19 +20,19 @@ export class MainComponent implements AfterViewInit, OnDestroy {
   protected slideItems: SlideItemType[] = [
     {
       id: 0,
-      image: '../assets/images/banner1.jpg',
+      image: './assets/images/banner1.jpg',
       title: 'Скидки на травянные чаи',
       text: 'Узнай все подробности, заполнив заявку'
     },
     {
       id: 1,
-      image: '../assets/images/banner2.jpeg',
+      image: './assets/images/banner2.jpeg',
       title: 'Закажи три пачки чая и получи подарок',
       text: ''
     },
     {
       id: 2,
-      image: '../assets/images/banner3.jpg',
+      image: './assets/images/banner3.jpg',
       title: 'Попробуй нашу новинку — ягодный чай',
       text: ''
     }
