@@ -28,7 +28,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "build": {
+        "build": {          
           "builder": "@angular/build:application",
           "options": {
             "outputPath": {
@@ -62,6 +62,12 @@
             ]
           },
           "configurations": {
+            "git-pages-deploy": {
+              "outputPath": {
+                "base": "./docs",
+                "browser": ""
+              }
+            },
             "production": {
               "budgets": [
                 {
