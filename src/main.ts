@@ -1,10 +1,11 @@
 /// <reference types="@angular/localize" />
 
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
+import { platformBrowser } from '@angular/platform-browser';
+import { AppModule } from './app/app-module';
 
-//declare const $: JQuery;
+declare const $: JQuery;
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+platformBrowser().bootstrapModule(AppModule, {
+  
+})
+  .catch(err => console.error(err));

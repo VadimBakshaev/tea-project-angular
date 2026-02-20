@@ -16,6 +16,12 @@
         "@schematics/angular:module": {
           "routing": true,
           "commonModule": true
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
         }
       },
       "root": "",
@@ -26,7 +32,7 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": {
-              "base": "dist/tea-project"
+              "base": "relz/tea-project"
             },
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
